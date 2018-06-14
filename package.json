@@ -1,7 +1,7 @@
 {
   "name": "dotfiles",
   "version": "4.4.3",
-  "description": "atomantic dotfiles for macos",
+  "description": "dotfiles for macos. Forked from https://github.com/mikewisian/dotfiles",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +9,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atomantic/dotfiles.git"
+    "url": "git+https://github.com/mikewisian/dotfiles.git"
   },
   "keywords": [
     "dotfiles",
@@ -22,12 +22,9 @@
     "commandline",
     "bootstrap"
   ],
-  "author": "Adam Eivy <atomantic@gmail.com>",
+  "author": "Mike Wisian <mike@wisian.me>",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/atomantic/dotfiles/issues"
-  },
-  "homepage": "https://github.com/atomantic/dotfiles#readme",
+  "homepage": "https://github.com/mikewisian/dotfiles#readme",
   "dependencies": {
     "inquirer": "1.0.2",
     "node-emoji": "1.3.0"
