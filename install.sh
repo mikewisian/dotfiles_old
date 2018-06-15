@@ -491,13 +491,13 @@ sudo nvram SystemAudioVolume=" ";ok
 running "Menu bar: disable transparency"
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false;ok
 
-running "Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons"
-for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-  defaults write "${domain}" dontAutoLoad -array \
-    "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-    "/System/Library/CoreServices/Menu Extras/Volume.menu" \
-    "/System/Library/CoreServices/Menu Extras/User.menu"
-done;
+# running "Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons"
+# for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
+#   defaults write "${domain}" dontAutoLoad -array \
+#     "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
+#     "/System/Library/CoreServices/Menu Extras/Volume.menu" \
+#     "/System/Library/CoreServices/Menu Extras/User.menu"
+# done;
 defaults write com.apple.systemuiserver menuExtras -array \
   "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
   "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
@@ -511,8 +511,8 @@ defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.5
 running "Set sidebar icon size to medium"
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2;ok
 
-running "Always show scrollbars"
-defaults write NSGlobalDomain AppleShowScrollBars -string "Always";ok
+# running "Always show scrollbars"
+# defaults write NSGlobalDomain AppleShowScrollBars -string "Always";ok
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
 running "Increase window resize speed for Cocoa applications"
@@ -588,8 +588,8 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightC
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true;ok
 
-running "Disable 'natural' (Lion-style) scrolling"
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false;ok
+# running "Disable 'natural' (Lion-style) scrolling"
+# defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false;ok
 
 running "Increase sound quality for Bluetooth headphones/headsets"
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40;ok
@@ -606,9 +606,9 @@ defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true;ok
 running "Disable press-and-hold for keys in favor of key repeat"
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false;ok
 
-running "Set a blazingly fast keyboard repeat rate"
-defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 10;ok
+# running "Set a blazingly fast keyboard repeat rate"
+# defaults write NSGlobalDomain KeyRepeat -int 2
+# defaults write NSGlobalDomain InitialKeyRepeat -int 10;ok
 
 running "Set language and text formats (english/US)"
 defaults write NSGlobalDomain AppleLanguages -array "en"
@@ -702,9 +702,9 @@ defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true;ok
 
-running "Use list view in all Finder windows by default"
-# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
-defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv";ok
+running "Use column view in all Finder windows by default"
+# Four-letter codes for the other view modes: `NLsv`, `icnv`, `clmv`, `Flwv`
+defaults write com.apple.finder FXPreferredViewStyle -string "clmv";ok
 
 running "Disable the warning before emptying the Trash"
 defaults write com.apple.finder WarnOnEmptyTrash -bool false;ok
@@ -757,11 +757,11 @@ running "Don’t group windows by application in Mission Control"
 # (i.e. use the old Exposé behavior instead)
 defaults write com.apple.dock expose-group-by-app -bool false;ok
 
-running "Disable Dashboard"
-defaults write com.apple.dashboard mcx-disabled -bool true;ok
+# running "Disable Dashboard"
+# defaults write com.apple.dashboard mcx-disabled -bool true;ok
 
-running "Don’t show Dashboard as a Space"
-defaults write com.apple.dock dashboard-in-overlay -bool true;ok
+# running "Don’t show Dashboard as a Space"
+# defaults write com.apple.dock dashboard-in-overlay -bool true;ok
 
 running "Don’t automatically rearrange Spaces based on most recent use"
 defaults write com.apple.dock mru-spaces -bool false;ok
@@ -769,7 +769,7 @@ defaults write com.apple.dock mru-spaces -bool false;ok
 running "Remove the auto-hiding Dock delay"
 defaults write com.apple.dock autohide-delay -float 0;ok
 running "Remove the animation when hiding/showing the Dock"
-defaults write com.apple.dock autohide-time-modifier -float 0;ok
+defaults write com.apple.dock autohide-time-modifier -float 0.15;ok
 
 running "Automatically hide and show the Dock"
 defaults write com.apple.dock autohide -bool true;ok
@@ -860,16 +860,16 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false;ok
 running "Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app"
 defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\U21a9";ok
 
-running "Display emails in threaded mode, sorted by date (oldest at the top)"
-defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
-defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "yes"
-defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date";ok
+# running "Display emails in threaded mode, sorted by date (oldest at the top)"
+# defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
+# defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "yes"
+# defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date";ok
 
-running "Disable inline attachments (just show the icons)"
-defaults write com.apple.mail DisableInlineAttachmentViewing -bool true;ok
+# running "Disable inline attachments (just show the icons)"
+# defaults write com.apple.mail DisableInlineAttachmentViewing -bool true;ok
 
-running "Disable automatic spell checking"
-defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled";ok
+# running "Disable automatic spell checking"
+# defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled";ok
 
 ###############################################################################
 bot "Spotlight"
@@ -913,15 +913,15 @@ bot "Terminal & iTerm2"
 # running "Only use UTF-8 in Terminal.app"
 # defaults write com.apple.terminal StringEncodings -array 4;ok
 #
-# running "Use a modified version of the Solarized Dark theme by default in Terminal.app"
-# TERM_PROFILE='Solarized Dark xterm-256color';
-# CURRENT_PROFILE="$(defaults read com.apple.terminal 'Default Window Settings')";
-# if [ "${CURRENT_PROFILE}" != "${TERM_PROFILE}" ]; then
-# 	open "./configs/${TERM_PROFILE}.terminal";
-# 	sleep 1; # Wait a bit to make sure the theme is loaded
-# 	defaults write com.apple.terminal 'Default Window Settings' -string "${TERM_PROFILE}";
-# 	defaults write com.apple.terminal 'Startup Window Settings' -string "${TERM_PROFILE}";
-# fi;
+running "Use a modified version of the Solarized Dark theme by default in Terminal.app"
+TERM_PROFILE='Solarized Dark xterm-256color';
+CURRENT_PROFILE="$(defaults read com.apple.terminal 'Default Window Settings')";
+if [ "${CURRENT_PROFILE}" != "${TERM_PROFILE}" ]; then
+	open "./configs/${TERM_PROFILE}.terminal";
+	sleep 1; # Wait a bit to make sure the theme is loaded
+	defaults write com.apple.terminal 'Default Window Settings' -string "${TERM_PROFILE}";
+	defaults write com.apple.terminal 'Startup Window Settings' -string "${TERM_PROFILE}";
+fi;
 
 #running "Enable “focus follows mouse” for Terminal.app and all X11 apps"
 # i.e. hover over a window and start `typing in it without clicking first
@@ -1017,14 +1017,22 @@ defaults write com.apple.appstore ShowDebugMenu -bool true;ok
 bot "Messages"
 ###############################################################################
 
-running "Disable automatic emoji substitution (i.e. use plain text smileys)"
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false;ok
+# running "Disable automatic emoji substitution (i.e. use plain text smileys)"
+# defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false;ok
 
 running "Disable smart quotes as it’s annoying for messages that contain code"
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false;ok
 
 running "Disable continuous spell checking"
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false;ok
+
+
+###############################################################################
+bot "Photos.app"
+###############################################################################
+
+running "Prevent Photos from opening automatically when devices are plugged in"
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
 bot "SizeUp.app"

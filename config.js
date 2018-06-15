@@ -47,15 +47,17 @@ module.exports = {
     'ssh-copy-id'
   ],
   cask: [
+    '1password',
     //'adium',
     'alfred',
     //'amazon-cloud-drive',
     'atext',
     //'atom',
     //'box-sync',
+    'cleanmymac',
     //'comicbooklover',
     //'diffmerge',
-    'cleanmymac',
+    'docker',
     'dropbox',
     //'evernote',
     'fake',
@@ -85,7 +87,7 @@ module.exports = {
     'xquartz'
   ],
   gem: [
-    'git-up'
+    'wbench'
   ],
   npm: [
     'antic',
